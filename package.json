@@ -1,0 +1,24 @@
+{
+  "name": "addtasks",
+  "version": "1.0.0",
+  "description": "Add tasks",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "loops": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Luzaks/AddTasks.git"
+  },
+  "author": "Guadalupe Rangel <kanemekanik@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Luzaks/AddTasks/issues"
+  },
+  "homepage": "https://github.com/Luzaks/AddTasks#readme",
+  "devDependencies": {
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11"
+  }
+}
