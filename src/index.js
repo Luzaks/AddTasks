@@ -6,10 +6,23 @@ class Task {
     }
 }
 
+function localStorageSave(task) {
+    if (localStorage.getItem('tasks') === null) {
+        let tasks = [];
+        tasks.push(task);
+        localStorage.setItem('tasks', JSON.stringify(tasks));
+    } else {
+        let tasks = JSON.parse(localStorage.getItem('tasks'));
+        tasks.push(task);
+        localStorage.setItem('tasks', JSON.stringify(tasks));
+    }
+}
+
 class UI {
     resetForm() {
         document.getElementById('task-form').reset();
     }
+
     addTask(task) {
         const tasksList = document.getElementById('tasks-list');
         const element = document.createElement('div');
@@ -39,10 +52,9 @@ document.getElementById('task-form').addEventListener('submit', function (e) {
     const taskprice = document.getElementById('price').value;
     const taskyear = document.getElementById('year').value;
     const task = new Task(taskname, taskprice, taskyear);
-
+    localStorageSave(task);
     const ui = new UI();
     ui.addTask(task);
-
     e.preventDefault();
 });
 
