@@ -27,12 +27,10 @@ class UI {
         this.resetForm();
     }
 
-    deletTask() {
-
-    }
-
-    showMessage() {
-
+    deleteTask(element) {
+        if (element.name === 'Delete') {
+            element.parentElement.parentElement.parentElement.remove();
+        }
     }
 }
 
@@ -46,4 +44,9 @@ document.getElementById('task-form').addEventListener('submit', function (e) {
     ui.addTask(task);
 
     e.preventDefault();
+});
+
+document.getElementById('tasks-list').addEventListener('click', function(e){
+   const ui = new UI();
+   ui.deleteTask(e.target);
 });
